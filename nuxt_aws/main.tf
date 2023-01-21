@@ -1,8 +1,7 @@
 provider "aws" {
   region = "eu-central-1"
-  //shared_config_files      = ["$HOME/.aws/config"]
-  shared_credentials_files = ["$HOME/.aws/credentials"]
-  profile = "vladbuk"
+  access_key = "${aws_access_key_id}"
+  secret_key = "${aws_secret_access_key}"
 }
 
 resource "aws_instance" "t2micro_ubuntu_test" {
