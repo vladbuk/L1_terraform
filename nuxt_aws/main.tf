@@ -1,6 +1,14 @@
 provider "aws" {
-  region = "eu-central-1"
-  shared_credentials_files = ["$HOME/.aws/credentials"]
+    region = "eu-central-1"
+    shared_credentials_files = ["$HOME/.aws/credentials"]
+}
+
+terraform {
+    backend "s3" {
+        bucket = "litprinz-terraform-state"
+        key = "L1_nuxtjs_project/terraform.tfstate"
+        region = "eu-central-1"
+  }
 }
 
 resource "aws_instance" "t2micro_ubuntu_test" {
