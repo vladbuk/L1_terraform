@@ -20,11 +20,7 @@ resource "aws_instance" "t2micro_ubuntu_test" {
         Name = "t2micro_ubuntu_test"
         Env = "testing"
     }
-    user_data = file("user_data.sh")
-    lifecycle {
-      //prevent_destroy = true
-      //create_before_destroy = true
-    }
+    //user_data = file("user_data.sh")
 }
 
 resource "aws_security_group" "allow_ports" {
